@@ -1,7 +1,7 @@
 #!/bin/bash
 PS3="select menu : "
-value=$(<num1.txt)
-value2=$(<num2.txt)
+value[0]=$(<num1.txt)
+value[1]=$(<num2.txt)
 
 if [ -v parameter ] 
 then
@@ -16,22 +16,22 @@ fi
 
 case $op in
  add)
-     let result=$value+$value2
+     let result=${value[0]}+${value[1]}
      ;;
  sub)
-     let result=$value-$value2
+     let result=${value[0]}-${value[1]}
      ;;
  div)
-     let result=$value/$value2
+     let result=${value[0]}/${value[1]}
      ;;
  mul)
-     let result=$value*$value2
+     let result=${value[0]}*${value[1]}
      ;;
 esac
 
 echo
-echo "num1 : $value"
-echo "num2 : $value2"
+echo "num1 : ${value[0]}"
+echo "num2 : ${value[1]}"
 echo "op : $op"
 echo "result : $result"
 exit 1;
