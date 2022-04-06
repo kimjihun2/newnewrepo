@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "project management in github"
 PS3="select menu : "
 value[0]=$(<num1.txt)
 value[1]=$(<num2.txt)
